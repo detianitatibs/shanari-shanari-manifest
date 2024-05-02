@@ -12,9 +12,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://github.com/detianitatibs/shanari-shanari-infrastructure.git"
+    repoURL: "https://github.com/detianitatibs/shanari-shanari-manifest.git"
     path: kustomize/overlays/prod
-    targetRevision: 6-build-gke
+    targetRevision: 1-migrate-from-infra
   destination:
     server: "https://kubernetes.default.svc"
     namespace: shanari-shanari
