@@ -16,7 +16,7 @@ spec:
     path: kustomize/overlays/prod
     targetRevision: 1-migrate-from-infra
   destination:
-    server: "https://<Cluster IP>"
+    server: "https://kubernetes.default.svc"
     namespace: shanari-shanari
   syncPolicy:
     syncOptions:
