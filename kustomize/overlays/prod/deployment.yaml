@@ -5,6 +5,9 @@ metadata:
 spec:
   template:
     spec:
+      nodeSelector:
+        cloud.google.com/gke-spot: "true"
+      terminationGracePeriodSeconds: 25
       containers:
         - name: shanari-shanari-fe
           image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe:277818ca3aa3eaf96dc6542bb11cb1367831251b
