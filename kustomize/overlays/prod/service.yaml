@@ -6,7 +6,7 @@ metadata:
     app: shanari
 spec:
   selector:
-    app: shanari-shanari-deployment
+    app: shanari-shanari
   ports:
     - port: 3000
       targetPort: 3000
