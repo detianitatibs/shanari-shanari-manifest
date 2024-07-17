@@ -9,6 +9,6 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: shanari-backend
+      name: shanari-shanari-service
       port:
         number: 80
