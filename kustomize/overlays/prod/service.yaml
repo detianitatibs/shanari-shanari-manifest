@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shanari-shanari-service
+  labels:
+    app: shanari
+spec:
+  selector:
+    app: shanari-shanari
+    tier: web
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: NodePort

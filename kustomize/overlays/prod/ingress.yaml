@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: shanari-shanari-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: shanari-shanari-ip
+  labels:
+    app: shanari-shanari
+spec:
+  defaultBackend:
+    service:
+      name: shanari-backend
+      port:
+        number: 80
