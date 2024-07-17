@@ -11,4 +11,4 @@ spec:
     service:
       name: shanari-shanari-service
       port:
-        number: 3000
+        number: 80
