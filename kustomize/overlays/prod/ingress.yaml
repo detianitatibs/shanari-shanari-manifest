@@ -4,6 +4,8 @@ metadata:
   name: shanari-shanari-ingress
   annotations:
     kubernetes.io/ingress.global-static-ip-name: shanari-shanari-ip
+    networking.gke.io/managed-certificates: managed-cert
+    kubernetes.io/ingress.class: "gce"
   labels:
     app: shanari-shanari
 spec:
