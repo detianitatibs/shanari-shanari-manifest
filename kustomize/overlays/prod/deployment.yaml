@@ -10,4 +10,4 @@ spec:
       terminationGracePeriodSeconds: 25
       containers:
         - name: shanari-shanari-fe
-          image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe:277818ca3aa3eaf96dc6542bb11cb1367831251b
+          image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe:e03c041d98ff7645fb169bd8b9f814817636e890
