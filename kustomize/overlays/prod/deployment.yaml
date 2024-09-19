@@ -26,4 +26,4 @@ spec:
             readOnly: false
       securityContext:
         fsGroup: 1001
-        fsUser: 1001
+        runAsUser: 1001
