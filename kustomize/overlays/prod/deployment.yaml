@@ -34,3 +34,4 @@ spec:
             readOnly: false
       securityContext:
         fsGroup: 1001
+        privileged: true
