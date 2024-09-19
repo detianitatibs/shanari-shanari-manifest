@@ -9,6 +9,8 @@ spec:
     storage: 20Gi
   storageClassName: shanari-storage-class
   mountOptions:
+    - uid=1001
+    - gid=1001
     - implicit-dirs
   csi:
     driver: gcsfuse.csi.storage.gke.io
