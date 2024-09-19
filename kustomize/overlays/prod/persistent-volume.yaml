@@ -11,6 +11,8 @@ spec:
   mountOptions:
     - uid=1001
     - gid=1001
+    - file-mode
+    - dir-mode
     - implicit-dirs
   csi:
     driver: gcsfuse.csi.storage.gke.io
