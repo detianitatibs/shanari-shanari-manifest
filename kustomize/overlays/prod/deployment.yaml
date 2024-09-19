@@ -24,3 +24,6 @@ spec:
           persistentVolumeClaim:
             claimName: gcs-fuse-csi-static-pvc
             readOnly: false
+      securityContext:
+        fsGroup: 1001
+        runAsUser: 1001
