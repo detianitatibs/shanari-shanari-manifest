@@ -4,6 +4,9 @@ metadata:
   name: shanari-shanari-deployment
 spec:
   template:
+    metadata:
+      annotations:
+        gke-gcsfuse/volumes: "true"
     spec:
       nodeSelector:
         cloud.google.com/gke-spot: "true"
@@ -11,3 +14,13 @@ spec:
       containers:
         - name: shanari-shanari-fe
           image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe:bfbdf1f9a9d9f67131e19e1e86ce9347d667839c
+          volumeMounts:
+            - name: gcs-fuse-csi-static
+              mountPath: /app/public/contents/blog
+              readOnly: false
+      serviceAccountName: shanari-ksa
+      volumes:
+        - name: gcs-fuse-csi-static
+          persistentVolumeClaim:
+            claimName: gcs-fuse-csi-static-pvc
+            readOnly: false
