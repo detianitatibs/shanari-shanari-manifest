@@ -11,6 +11,14 @@ spec:
       nodeSelector:
         cloud.google.com/gke-spot: "true"
       terminationGracePeriodSeconds: 25
+      initContainers:
+      - name: init:
+        image: busybox
+        command: ["sh", "-c", "chown -R 1001:1001 /app/public/contents/blog",]
+        volumeMounts:
+          - name: gcs-fuse-csi-static
+              mountPath: /app/public/contents/blog/
+              readOnly: false
       containers:
         - name: shanari-shanari-fe
           image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe:110485f69a9da7b9b5ecd2838a5114d95bc3ec6d
@@ -25,5 +33,4 @@ spec:
             claimName: gcs-fuse-csi-static-pvc
             readOnly: false
       securityContext:
-        runAsUser: 1001
         fsGroup: 1001
