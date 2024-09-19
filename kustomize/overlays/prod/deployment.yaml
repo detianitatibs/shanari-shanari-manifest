@@ -16,7 +16,7 @@ spec:
           image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe:91b6fb674d49788ebdba61c22b469de746473755
           volumeMounts:
             - name: gcs-fuse-csi-static
-              mountPath: /app/public/contents/blog
+              mountPath: /app/public/contents/blog/
               readOnly: false
       serviceAccountName: shanari-ksa
       volumes:
