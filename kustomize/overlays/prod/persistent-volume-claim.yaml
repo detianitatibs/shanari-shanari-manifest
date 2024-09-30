@@ -5,7 +5,7 @@ metadata:
   namespace: shanari-shanari
 spec:
   accessModes:
-    - ReadOnlyMany
+    - ReadWriteMany
   resources:
     requests:
       storage: 20Gi
