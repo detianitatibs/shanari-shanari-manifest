@@ -18,6 +18,4 @@ spec:
     driver: gcsfuse.csi.storage.gke.io
     volumeHandle: shanari-blog-posts
     volumeAttributes:
-      gcsfuseLoggingSeverity: error
-      fileCacheCapacity: "10Gi"
-      metadataCacheTTLSeconds: "600"
+      gcsfuseLoggingSeverity: warning
