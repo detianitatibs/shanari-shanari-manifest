@@ -18,4 +18,4 @@ spec:
     driver: gcsfuse.csi.storage.gke.io
     volumeHandle: shanari-blog-posts
     volumeAttributes:
-      gcsfuseLoggingSeverity: error
+      gcsfuseLoggingSeverity: info
