@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: shanari-shanari-deployment
 spec:
-  replicas: 0
+  replicas: 2
   selector:
     matchLabels:
       app: shanari-shanari-
@@ -19,7 +19,7 @@ spec:
           image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe
           resources:
             limits:
-              memory: "512Mi"
+              memory: "1Gi"
               cpu: "500m"
           ports:
             - containerPort: 3000
