@@ -19,7 +19,7 @@ spec:
           image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe
           resources:
             limits:
-              memory: "256MiB"
+              memory: "256Mi"
               cpu: "100m"
           ports:
             - containerPort: 3000
