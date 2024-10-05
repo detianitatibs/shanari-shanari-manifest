@@ -19,6 +19,7 @@ spec:
             - name: gcs-fuse-csi-ephemeral
               mountPath: /app/public/contents/blog/
               readOnly: false
+      serviceAccountName: shanari-ksa
       volumes:
         - name: gcs-fuse-csi-ephemeral
           csi:
