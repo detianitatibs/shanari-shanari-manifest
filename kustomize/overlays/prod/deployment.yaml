@@ -11,6 +11,7 @@ spec:
     spec:
       nodeSelector:
         cloud.google.com/gke-spot: "true"
+        cloud.google.com/compute-class: Performance
         cloud.google.com/gke-ephemeral-storage-local-ssd: "true"
       terminationGracePeriodSeconds: 30
       containers:
