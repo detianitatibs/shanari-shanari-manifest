@@ -4,8 +4,8 @@ resources:
   - ../../base
   - ingress.yaml
   - managed-cert.yaml
-  # - persistent-volume.yaml
-  # - persistent-volume-claim.yaml
+  - persistent-volume.yaml
+  - persistent-volume-claim.yaml
 patches:
   - path: deployment.yaml
   - path: service.yaml
