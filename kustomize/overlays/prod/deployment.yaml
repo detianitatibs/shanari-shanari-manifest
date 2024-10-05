@@ -7,10 +7,10 @@ spec:
     metadata:
       annotations:
         gke-gcsfuse/volumes: "true"
+        gke-gcsfuse/ephemeral-storage-limit: 5Gi
     spec:
       nodeSelector:
         cloud.google.com/gke-spot: "true"
-        gke-gcsfuse/ephemeral-storage-limit: 5Gi
       terminationGracePeriodSeconds: 25
       containers:
         - name: shanari-shanari-fe
