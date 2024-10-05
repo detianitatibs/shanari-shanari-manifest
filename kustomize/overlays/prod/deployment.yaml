@@ -7,13 +7,11 @@ spec:
     metadata:
       annotations:
         gke-gcsfuse/volumes: "true"
-        gke-gcsfuse/ephemeral-storage-limit: 15Gi
+        gke-gcsfuse/ephemeral-storage-limit: 5Gi
     spec:
       nodeSelector:
         cloud.google.com/gke-spot: "true"
-        cloud.google.com/machine-family: c3
-        cloud.google.com/compute-class: Performance
-        cloud.google.com/gke-ephemeral-storage-local-ssd: "true"
+      restartPolicy: Never
       terminationGracePeriodSeconds: 30
       containers:
         - name: shanari-shanari-fe
@@ -32,5 +30,5 @@ spec:
               bucketName: shanari-blog-posts
               mountOptions: "implicit-dirs,uid=1001,gid=1001,file-mode,dir-mode"
               gcsfuseLoggingSeverity: error
-              fileCacheCapacity: "10Gi"
+              fileCacheCapacity: "2Gi"
               metadataCacheTTLSeconds: "3600"
