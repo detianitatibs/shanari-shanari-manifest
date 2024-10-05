@@ -14,11 +14,15 @@ spec:
     - file-mode=755
     - dir-mode=755
     - implicit-dirs
+    - stat-cache-capacity=102400
+    - stat-cache-ttl=3600s
+    - type-cache-ttl=3600s
   csi:
     driver: gcsfuse.csi.storage.gke.io
     volumeHandle: shanari-blog-posts
     volumeAttributes:
       gcsfuseLoggingSeverity: error
-      fileCacheCapacity: "1Gi"
-      metadataCacheTTLSeconds: "3600"
+      fileCacheCapacity: 1Gi
       fileCacheForRangeRead: "true"
+      metadataStatCacheCapacity: 32Mi
+      metadataTypeCacheCapacity: 4Mi
