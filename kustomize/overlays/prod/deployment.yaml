@@ -7,7 +7,6 @@ spec:
     metadata:
       annotations:
         gke-gcsfuse/volumes: "true"
-        gke-gcsfuse/ephemeral-storage-limit: 5Gi
     spec:
       nodeSelector:
         cloud.google.com/gke-spot: "true"
@@ -16,20 +15,14 @@ spec:
         - name: shanari-shanari-fe
           image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe:830a08e210562e8a17525340e86e1faab8b6df79
           volumeMounts:
-            - name: gcs-fuse-csi-ephemeral
+            - name: gcs-fuse-csi-static
               mountPath: /app/public/contents/blog/
               readOnly: false
       serviceAccountName: shanari-ksa
       volumes:
-        - name: gcs-fuse-csi-ephemeral
-          csi:
-            driver: gcsfuse.csi.storage.gke.io
+        - name: gcs-fuse-csi-static
+          persistentVolumeClaim:
+            claimName: gcs-fuse-csi-static-pvc
             readOnly: false
-            volumeAttributes:
-              bucketName: shanari-blog-posts
-              mountOptions: "implicit-dirs,uid=1001,gid=1001,file-mode,dir-mode"
-              gcsfuseLoggingSeverity: error
-              fileCacheCapacity: "2Gi"
-              metadataCacheTTLSeconds: "3600"
       securityContext:
         fsGroup: 1001
