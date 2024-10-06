@@ -13,7 +13,7 @@ spec:
       terminationGracePeriodSeconds: 25
       containers:
         - name: shanari-shanari-fe
-          image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe:b9e0d26cee651df059c41343598995fb36682e49
+          image: asia-northeast1-docker.pkg.dev/shanari-shanari/shanari-shanari/shanari-shanari-fe:0236de4d935d92bb92951e224b53d11133a33ac6
           volumeMounts:
             - name: gcs-fuse-csi-static
               mountPath: /app/public/contents/blog/
